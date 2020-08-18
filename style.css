@@ -1,0 +1,580 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Header Configuration */
+.about-links {
+	padding: 5px 15px;
+	background-color: #131313;
+	display: flex;
+	justify-content: space-between;
+}
+
+.about-links a {
+	color: gray;
+	font-size: 14px;
+	margin: 0 3px;
+}
+
+.about-links a:hover {
+	color: white;
+}
+
+.site a:first-child {
+	color: white;
+}
+
+.nav-header {
+	position: sticky;
+	top: 0;
+	z-index: 1;
+}
+
+.nav-header nav {
+	background-color: #fefefe;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-header .links a {
+	color: gray;
+	font-size: 14px;
+	margin: 0 10px;
+}
+
+.nav-header .links a:hover {
+	color: black;
+}
+
+.search {
+	width: 50px;
+	height: 50px;
+	color: darkgray;
+	border-left: 1px solid rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.search:hover {
+	color: gray;
+}
+
+.menu-bar {
+	display: none;
+}
+
+.festival p {
+	color: black;
+	background-color: #ffdd33;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+
+@media (max-width: 750px) {
+	.about-links {
+		display: none;
+	}
+
+	.nav-header nav {
+		justify-content: flex-end;
+	}
+
+	.nav-header .links {
+		display: none;
+	}
+
+	.menu-bar {
+		width: 50px;
+		height: 50px;
+		color: darkgray;
+		border-left: 1px solid rgba(0, 0, 0, 0.1);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+/* Header Configuration */
+
+
+
+/* Grid news configuration */
+.news-grid {
+	display: grid;
+	gap: 10px;
+	grid-template-columns: 2fr 1fr;
+	grid-template-areas:
+		"main news-1"
+		"main news-2";
+}
+
+.news-grid .news::before {
+	content: "";
+	background-image: linear-gradient(to top, black, transparent);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0.8;
+	transition: 0.25s;
+}
+
+.news-grid .news:hover::before {
+	opacity: 0.6;
+	transition: 0.25s;
+}
+
+.news-grid .news {
+	background-image: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2020/03/question-unknown-516x270.png");
+	background-size: contain;
+	background-repeat: round;
+	position: relative;
+}
+
+.main-news {
+	grid-area: main;
+	height: 550px;
+}
+
+.news-1 {
+	grid-area: news-1;
+
+}
+
+.news-2 {
+	grid-area: news-2;
+}
+
+.grid-text {
+	position: absolute;
+	bottom: 0;
+	margin: 20px;
+	color: white;
+}
+
+.main-news h1 {
+	font-size: 3rem;
+}
+
+.news .subtitle {
+	margin-top: 20px;
+	color: darkgray;
+	font-size: 12px;
+}
+
+.news .subtitle a {
+	color: inherit;
+}
+
+.news .subtitle a:hover {
+	color: white;
+}
+
+@media (max-width: 750px) {
+	.news-grid {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3, 230px);
+		grid-template-areas:
+			"main"
+			"news-1"
+			"news-2";
+	}
+
+	.main-news {
+		height: auto;
+	}
+
+	.main-news h1 {
+		font-size: 1.4rem;
+	}
+}
+/* Grid news configuration */
+
+
+
+/* General configuration through the sections */
+section:not(.news) {
+	max-width: 75em;
+	margin: 80px auto;
+}
+
+.section-title {
+	font-size: 1.5rem;
+	margin-bottom: 20px;
+}
+
+.section-title a {
+	color: #ff4422;
+}
+
+.section-title a:hover {
+	color: black;
+}
+/* General configuration through the sections */
+
+
+
+/* Latest news section configuration */
+.latest-news .container {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.latest-news .news-card {
+	flex-basis: 23%;
+	margin-right: 1%;
+	display: flex;
+	flex-direction: column;
+}
+
+.img-news-card {
+	width: 270px;
+	height: 130px;
+	background-image: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2020/03/question-unknown-516x270.png");
+	background-size: contain;
+	background-repeat: round;
+}
+
+.latest-news .news {
+	width: 270px;
+}
+
+.latest-news .news h2 {
+	margin-top: 10px;
+	font-size: 1rem;
+}
+
+.latest-news .news p {
+	margin-top: 10px;
+	margin-bottom: 25px;
+}
+
+.latest-news .news a {
+	color: black;
+}
+
+.latest-news .news a:hover {
+	color: #ff4422;
+	text-decoration: underline;
+}
+
+@media (max-width: 840px) {
+	.latest-news .news-card {
+		flex-basis: 49%;
+		align-items: center;
+	}
+}
+
+@media (max-width: 750px) {
+	.latest-news .news-card {
+		flex-basis: 100%;
+		flex-direction: row;
+	}
+
+	.img-news-card {
+		flex-basis: 75px;
+		height: 75px;
+		margin-right: 10px;
+	}
+
+	.latest-news .news {
+		width: unset;
+		flex-basis: 90%;
+	}
+}
+/* Latest news section configuration */
+
+
+
+/* Funding section configuration */
+.latest-funding > header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+.latest-funding .extra {
+	color: #ff4422;
+}
+
+.extra a {
+	color: inherit;
+}
+
+.extra a:hover {
+	color: black;
+}
+
+.latest-funding .container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.card-funding {
+	width: 25%;
+	padding-right: 30px;
+}
+
+.card-funding header {
+	position: relative;
+}
+
+.card-funding img {
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: 15%;
+	left: 10px;
+}
+
+.card-funding .company {
+	color: white;
+	background-color: #ff4422;
+	font-weight: bold;
+	padding: 10px 0;
+	padding-left: 80px;
+}
+
+.card-funding .value {
+	background-color: #ffebe7;
+	padding: 10px 0;
+	padding-left: 80px;
+}
+
+.value p {
+	font-size: 12px;
+	color: gray;
+}
+
+.card-funding main {
+	display: flex;
+	flex-direction: column;
+	background-color: #fffaf8;
+	border-bottom: 1px solid #ffebe7;
+	font-size: 14px;
+	padding: 20px 15px;
+}
+
+.card-funding main a {
+	color: black;
+	margin-bottom: 10px;
+}
+
+.card-funding main i {
+	margin-right: 5px;
+}
+
+.card-funding footer {
+	color: rgba(0, 0, 0, 0.8);
+	background-color: #fffaf8;
+	font-size: 11px;
+	padding: 20px 15px 40px;
+}
+
+@media (max-width: 750px) {
+	.latest-funding > header {
+		flex-direction: column;
+	}
+
+	.extra a {
+		display: block;
+		margin: 10px 0;
+	}
+
+	.vertical-br {
+		display: none;
+	}
+
+	.card-funding {
+		width: initial;
+		flex-basis: 100%;
+		padding-right: 0;
+		margin-bottom: 20px;
+	}
+}
+/* Funding section configuration */
+
+
+
+/* News container configuration */
+.news-container {
+	max-width: 75em;
+	margin: 80px auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.news-container > * {
+	flex-basis: 30%;
+	margin-right: 3%;
+}
+
+.most-popular::before {
+	content: "";
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to top, black, transparent);
+	position: absolute;
+	opacity: 0.7;
+}
+
+.most-popular {
+	height: 275px;
+	position: relative;
+	background-image: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2020/03/question-unknown-516x270.png");
+	background-size: contain;
+	background-repeat: round;
+}
+
+.popular-news {
+	position: absolute;
+	bottom: 0;
+	margin: 15px;
+	color: white;
+}
+
+.popular-news p:first-child {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.popular-news .title {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 5px 0;
+}
+
+.popular-news .subtitle {
+	font-size: 12px;
+	color: darkgray;
+}
+
+.news-container .latest {
+	background-color: #ffebe7;
+	display: flex;
+	height: 100px;
+}
+
+.card-latest-news {
+	flex: 2;
+	color: #ff4422;
+	padding: 15px 10px;
+}
+
+.card-latest-news p:first-child {
+	font-size: 12px;
+}
+
+.card-latest-news p:last-child {
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.latest a {
+	flex: 1;
+	background-image: url("https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2020/03/question-unknown-516x270.png");
+	background-size: contain;
+	background-repeat: round;
+}
+
+ul {
+	color: #ff4422;
+}
+
+li {
+	margin-left: 15px;
+	padding: 10px 5px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+li p {
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 12px;
+}
+
+@media (max-width: 1000px) {
+	.news-container > * {
+		flex-basis: 45%;
+		margin: 0 2.5% 30px;
+	}
+}
+
+@media (max-width: 750px) {
+	.news-container > * {
+		flex-basis: 97%;
+	}
+}
+/* News container configuration */
+
+
+/* Footer configuration */
+.nav-footer {
+	background-color: #131313;
+	padding: 30px 0;
+}
+
+.social {
+	width: max-content;
+	margin: 0 auto;
+	margin-bottom: 30px;
+	display: flex;
+}
+
+.social a {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	color: white;
+	background-color: #333333;
+	margin-right: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.social a:hover {
+	background-color: black;
+}
+
+.nav-footer .links {
+	width: max-content;
+	margin: 0 auto;
+	font-size: 12px;
+	display: flex;
+}
+
+.nav-footer .links a {
+	color: darkgray;
+	margin-right: 10px;
+}
+
+.nav-footer .links a:hover {
+	color: white;
+}
+
+.copyright {
+	padding: 50px 0;
+	background-color: black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.copyright p {
+	font-size: 12px;
+	color: darkgray;
+	margin: 0 5px;
+}
+
+.footer-legal-logoTNW {
+	width: 40px;
+	height: 9px;
+}
+
+.footer-legal-logoStackPath {
+	width: 65px;
+	height: 9px;
+}
+/* Footer configuration */
